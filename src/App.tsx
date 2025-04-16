@@ -9,6 +9,7 @@ import { Route, Routes } from 'react-router-dom'
 import { BrowserRouter } from 'react-router-dom'
 import MyClock from './02MyClock/MyClock'
 import Lotto from './05Lotto/Lotto'
+import FoodMain from './06FoodCard/FoodMain'
 function App() {
 
 
@@ -28,6 +29,7 @@ function App() {
           <Route path="/test" element={<TsxTest/>}/>
           <Route path="/MyClock" element={<MyClock/>}/>
           <Route path="/Lotto" element={<Lotto/>}/>
+          <Route path="/FoodMain" element={<FoodMain/>}/>
         </Routes>
       </main>
       <footer className='w-full h-20  flex justify-center items-center bg-green-100'>

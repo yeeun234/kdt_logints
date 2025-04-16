@@ -1,5 +1,5 @@
-import MyClockimage from "./MyClockImage";
-import MyClockTime from "./MyClockTime";
+import MyClockimage from "./MyClockImage"
+import MyClockTime from "./MyClockTime"
 
 function MyClock () {
     

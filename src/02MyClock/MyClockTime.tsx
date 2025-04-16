@@ -6,6 +6,7 @@ interface CSSProperties  {
     fontSize: string;
 }
 function MyClockTime() {
+    //useState type 선언
     const [currentTime, setCurrentTime] = useState<Date>(new Date());
     
 

@@ -1,13 +1,12 @@
-import React from 'react'
-import TailBall from '../ui/TailBall'
+import TailBall from '../ui/TailBall';
 import TailButton from '../ui/TailButton'
 import { useState } from 'react'
 
-export default function Lotto():JSX.Element {
-
-    const [lottoTags, setLottoTags] = useState([]);
+export default function Lotto():React.ReactNode {
+    //useState 타입선언
+    const [lottoTags, setLottoTags] = useState<React.ReactNode[]>([]);
     const handleLottoNum = () => {
-        let lottoNum = [];
+        let lottoNum:number[] = [];
 
         while (lottoNum.length < 7) {
             let n = Math.floor(Math.random() * 45) + 1 //`1~45
@@ -19,26 +18,28 @@ export default function Lotto():JSX.Element {
         }
 
         //보너스 번호 => 배열로 나옴
-        let bonus = lottoNum.splice(-1);
+        let bonus:number[] = lottoNum.splice(-1);
 
 
         //로또 번호 정렬
-        lottoNum.sort((a, b) => { a - b })
+        lottoNum.sort((a:number, b:number) =>  a - b )
 
         //로또 배열 다시 생성 
-        lottoNum = [...lottoNum, '+', ...bonus];
+        let lottoNum2 : (number|string)[] = [...lottoNum, '+', ...bonus];
 
         // setLottoTags(lottoNum);
         // console.log("lottoNum",lottoNum);
 
         //Tailball만들기
-        let tm = lottoNum.map(item =>
+        let tm = lottoNum2.map((item:number|string, idx:number) =>
                      item === '+' ? 
-                    <span className='w-16 h-16 flex justify-center 
+                    <span 
+                    key={'n' + item + idx}
+                    className='w-16 h-16 flex justify-center 
                     mr-5 items-center text-4xl font-bold'>
                     {item}</span> :
                     <TailBall
-                    key={'n' + item}
+                    key={'n' + item + idx}
                     n={item} />)
         setLottoTags(tm);
     }

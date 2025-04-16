@@ -31,6 +31,9 @@ export default function Nav() {
         {login && <Link to="/Lotto">
         <div className="bg-green-200  hover:bg-green-300   rounded-lg  sm:w-auto px-5 py-2.5 text-center">Lotto</div>
         </Link>}
+        {login && <Link to="/FoodMain">
+        <div className="bg-green-200  hover:bg-green-300   rounded-lg  sm:w-auto px-5 py-2.5 text-center">FoodMain</div>
+        </Link>}
         { login ? <div className="bg-green-200  hover:bg-green-300   rounded-lg  sm:w-auto px-5 py-2.5 text-center" onClick={handleclick}>Logout</div>
           : <div className="bg-green-200  hover:bg-green-300   rounded-lg  sm:w-auto px-5 py-2.5 text-center" >Login</div>}
     </div>
